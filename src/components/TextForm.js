@@ -15,10 +15,7 @@ const timeConverter = (minutes) => {
 }
 
 export default function TextForm(props) {
-    const [text, setText] = useState('Enter text here')
-    const words = text.split(" ").length
-    const charachters = text.length
-    const readingTime = timeConverter(charachters / 200)
+    const [text, setText] = useState('')
 
     const toUpper = () => {
         setText(text.toUpperCase())
@@ -28,25 +25,35 @@ export default function TextForm(props) {
         setText(text.toLowerCase())
     }
 
+    const clearText = () => {
+        setText("")
+    }
+
     const handleOnChange = (event) => {
         setText(event.target.value)
-
     }
 
     return (
-        <div className="w-fit mx-auto p-5 space-y-3 mt-5">
-            <div className="form">
-                <h1 className="font-semibold text-3xl mb-2">{props.heading}</h1>
-                <textarea id="myBox" value={text} rows="8" className="w-[700px] border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition" onChange={handleOnChange}></textarea>
+        <div className="w-[100vw] px-10 max-[1280px]:space-y-20 mt-16 min-[1280px]:flex min-[1280px]:justify-between">
+            <div className="left max-[1280px]:w-fit max-[1280px]:mx-auto">
+                <div className="form">
+                    <h1 className="font-semibold text-3xl mb-2">{props.heading}</h1>
+                    <textarea id="myBox" placeholder='Enter text here' value={text} rows="10" className="lg:w-[700px] w-[500px] border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition" onChange={handleOnChange}></textarea>
+                </div>
+                <div className="buttons mt-4">
+                    <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 transition mr-3" onClick={toUpper}>Convert To Uppercase</button>
+                    <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 transition mr-3" onClick={toLower}>Convert To Lowercase</button>
+                    <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 transition max-[600px]:mt-3" onClick={clearText}>Clear Text</button>
+                </div>
             </div>
-            <div className="buttons">
-                <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 transition mr-3" onClick={toUpper}>Convert To Uppercase</button>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" onClick={toLower}>Convert To Lowercase</button>
-            </div>
-            <div className='summary'>
-                <h1 className="mt-4 font-semibold text-2xl">Your Text Summary</h1>
-                <div><span>{words} words</span>, <span>{charachters} charachters</span></div>
-                <div>Reading Time: {readingTime}</div>
+            <div className='max-[1280px]:mx-auto right bg-gray-500 w-[350px] text-gray-200 rounded-xl text-[1.1rem] min-h-[450px]'>
+                <h1 className="mt-4 font-semibold text-3xl text-center">Your Text Summary</h1>
+                <div className="summary mt-6 mx-12">
+                    <div>Sentences:- {text.split(".").length - 1}</div>
+                    <div>Words:- {text.split(" ").length - 1}</div>
+                    <div>Charachters:- {text.length}</div>
+                    <div>Reading Time:- {timeConverter(text.length / 600)}</div>
+                </div>
             </div>
         </div>
     )
