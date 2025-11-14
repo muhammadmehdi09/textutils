@@ -38,12 +38,12 @@ export default function TextForm(props) {
             <div className="left max-[1280px]:w-fit max-[1280px]:mx-auto">
                 <div className="form">
                     <h1 className="font-semibold text-3xl mb-2">{props.heading}</h1>
-                    <textarea id="myBox" placeholder='Enter text here' value={text} rows="10" className="lg:w-[700px] w-[500px] border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition" onChange={handleOnChange}></textarea>
+                    <textarea id="myBox" placeholder='Enter text here' value={text} rows="10" className={`lg:w-[700px] w-[500px] border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-${props.color}-400 focus:border-${props.color}-400 transition`} onChange={handleOnChange}></textarea>
                 </div>
                 <div className="buttons mt-4">
-                    <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 transition mr-3" onClick={toUpper}>Convert To Uppercase</button>
-                    <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 transition mr-3" onClick={toLower}>Convert To Lowercase</button>
-                    <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 transition max-[600px]:mt-3" onClick={clearText}>Clear Text</button>
+                    <button className={`bg-${props.color}-500 text-white px-4 py-2 rounded hover:bg-${props.color}-600 focus:outline-none focus:ring-2 focus:ring-${props.color}-400 transition mr-3`} onClick={toUpper}>Convert To Uppercase</button>
+                    <button className={`bg-${props.color}-500 text-white px-4 py-2 rounded hover:bg-${props.color}-600 focus:outline-none focus:ring-2 focus:ring-${props.color}-400 transition mr-3`} onClick={toLower}>Convert To Lowercase</button>
+                    <button className={`bg-${props.color}-500 text-white px-4 py-2 rounded hover:bg-${props.color}-600 focus:outline-none focus:ring-2 focus:ring-${props.color}-400 transition max-[600px]:mt-3`} onClick={clearText}>Clear Text</button>
                 </div>
             </div>
             <div className='max-[1280px]:mx-auto right bg-gray-500 w-[350px] text-gray-200 rounded-xl text-[1.1rem] min-h-[450px]'>

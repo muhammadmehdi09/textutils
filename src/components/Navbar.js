@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types'
 
 export default function Navbar(props) {
+    console.log(props.color[2])
     return (
-        <nav className="bg-gray-200 py-1 pt-[6px]">
+        <nav style={{backgroundColor: props.color.color3}} className={`py-1 pt-[6px]`}>
             <div className="flex space-x-4 my-auto justify-between px-4">
                 <div className="right flex">
                     <a className="m-2 ml-0 font-semibold text-xl" href="/">{props.title}</a>
@@ -17,8 +18,8 @@ export default function Navbar(props) {
                 </div>
                 <div className="left my-auto">
                     <form className="space-x-2" role="search">
-                        <input className="p-[6px] rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-[2px] focus:ring-blue-500 focus:ring-offset-1 focus:ring-offset-blue-200 transition duration-200" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="text-green-700 border border-green-700 py-[6px] px-3 rounded-md hover:text-white hover:bg-green-700 transition duration-500" type="submit">Search</button>
+                        <input className={`p-[6px] rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-[2px] focus:ring-${props.color.color1}-500 focus:ring-offset-1 focus:ring-offset-${props.color.color1}-200 transition duration-200`} type="search" placeholder="Search" aria-label="Search" />
+                        <button className={`text-${props.color.color1}-700 border border-${props.color.color1}-700 py-[6px] px-3 rounded-md hover:text-white hover:bg-${props.color.color1}-700 transition duration-500 hover:text-current`} type="submit">Search</button>
                     </form>
                 </div>
             </div>
