@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 export default function Navbar(props) {
     return (
-        <nav style={{ backgroundColor: props.color }} className={`py-1 pt-[6px]`}>
+        <nav className={`py-1 pt-[6px] bg-[${props.color}]`}>
             <div className="flex space-x-4 my-auto justify-between px-4">
                 <div className="right flex">
                     <a className="m-2 ml-0 font-semibold text-xl" href="/">{props.title}</a>
