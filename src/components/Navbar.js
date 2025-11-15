@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types'
 
 export default function Navbar(props) {
-    console.log(props.color[2])
     return (
-        <nav style={{backgroundColor: props.color.color3}} className={`py-1 pt-[6px]`}>
+        <nav style={{ backgroundColor: props.color }} className={`py-1 pt-[6px]`}>
             <div className="flex space-x-4 my-auto justify-between px-4">
                 <div className="right flex">
                     <a className="m-2 ml-0 font-semibold text-xl" href="/">{props.title}</a>
@@ -17,10 +16,12 @@ export default function Navbar(props) {
                     </ul>
                 </div>
                 <div className="left my-auto">
-                    <form className="space-x-2" role="search">
-                        <input className={`p-[6px] rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-[2px] focus:ring-${props.color.color1}-500 focus:ring-offset-1 focus:ring-offset-${props.color.color1}-200 transition duration-200`} type="search" placeholder="Search" aria-label="Search" />
-                        <button className={`text-${props.color.color1}-700 border border-${props.color.color1}-700 py-[6px] px-3 rounded-md hover:text-white hover:bg-${props.color.color1}-700 transition duration-500 hover:text-current`} type="submit">Search</button>
-                    </form>
+                    <label className="relative inline-flex items-center cursor-pointer mt-1">
+                        <input type="checkbox" className="sr-only peer" onChange={props.toggleMode} />
+                        <div className="w-12 h-6 bg-gray-400 rounded-full peer-checked:bg-blue-500 transition-colors duration-300"></div>
+                        <div className="absolute left-1 top-1 w-4 h-4 bg-white rounded-full shadow-md transition-transform duration-300 peer-checked:translate-x-6"></div>
+                        <div className="ml-1" >{props.toggleText} Dark Mode</div>
+                    </label>
                 </div>
             </div>
         </nav>

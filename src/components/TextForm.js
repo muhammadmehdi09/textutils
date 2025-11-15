@@ -38,7 +38,7 @@ export default function TextForm(props) {
             <div className="left max-[1280px]:w-fit max-[1280px]:mx-auto">
                 <div className="form">
                     <h1 className="font-semibold text-3xl mb-2">{props.heading}</h1>
-                    <textarea id="myBox" placeholder='Enter text here' value={text} rows="10" className={`lg:w-[700px] w-[500px] border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-${props.color}-400 focus:border-${props.color}-400 transition`} onChange={handleOnChange}></textarea>
+                    <textarea id="myBox"  placeholder='Enter text here' value={text} rows="10" className={`lg:w-[700px] w-[500px] bg-[${props.color2}] rounded-md px-3 py-2 focus:outline-none`} onChange={handleOnChange}></textarea>
                 </div>
                 <div className="buttons mt-4">
                     <button className={`bg-${props.color}-500 text-white px-4 py-2 rounded hover:bg-${props.color}-600 focus:outline-none focus:ring-2 focus:ring-${props.color}-400 transition mr-3`} onClick={toUpper}>Convert To Uppercase</button>
