@@ -1,19 +1,13 @@
 import PropTypes from 'prop-types'
+import logo from "../assets/logo.png";
 
 export default function Navbar(props) {
     return (
         <nav style={{ backgroundColor: props.color }} className={`py-1 pt-[6px]`}>
             <div className="flex space-x-4 my-auto justify-between px-4">
                 <div className="right flex">
-                    <a className="m-2 ml-0 font-semibold text-xl" href="/">{props.title}</a>
-                    <ul className="flex space-x-3 m-2 my-auto">
-                        <li className="">
-                            <a className="" aria-current="page" href="/">Home</a>
-                        </li>
-                        <li className="">
-                            <a className="" aria-current="page" href="/">About</a>
-                        </li>
-                    </ul>
+                    {/* <a className="m-2 ml-0 font-semibold text-xl" href="/">{props.title}</a> */}
+                    <img src={logo} alt="TextUtils" className="w-32 h-6" />
                 </div>
                 <div className="left my-auto">
                     <label className="relative inline-flex items-center cursor-pointer mt-1">

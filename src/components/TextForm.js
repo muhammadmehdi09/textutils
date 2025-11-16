@@ -33,6 +33,16 @@ export default function TextForm(props) {
         setText(event.target.value)
     }
 
+    const wordsCalculator = (arr) => {
+        let counter = 0
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === "") {
+                counter++
+            }
+        }
+        return arr.length - counter
+    }
+
     return (
         <div className="w-[100vw] px-10 max-[1280px]:space-y-20 mt-16 min-[1280px]:flex min-[1280px]:justify-between">
             <div className="left max-[1280px]:w-fit max-[1280px]:mx-auto">
@@ -50,7 +60,7 @@ export default function TextForm(props) {
                 <h1 className="mt-4 font-semibold text-3xl text-center">Your Text Summary</h1>
                 <div className="summary mt-6 mx-12">
                     <div>Sentences:- {text.split(".").length - 1}</div>
-                    <div>Words:- {text.split(" ").length - 1}</div>
+                    <div>Words:- {wordsCalculator(text.split(" "))}</div>
                     <div>Charachters:- {text.length}</div>
                     <div>Reading Time:- {timeConverter(text.length / 600)}</div>
                 </div>
