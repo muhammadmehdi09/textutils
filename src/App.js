@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 function App() {
   const [myTheme, setMyTheme] = useState({
-    class: "App h-[100vh]",
+    class: "App min-h-screen",
     color1: "blue",
     color2: "#e5e7eb",
     toggleText: "Enable"
@@ -14,7 +14,7 @@ function App() {
   const toggleMode = () => {
     if (myTheme.toggleText === "Enable") {
       setMyTheme({
-        class: "App bg-gray-900 text-white h-[100vh]",
+        class: "App bg-gray-900 text-white min-h-screen",
         color1: "green",
         color2: "#3d3f45",
         toggleText: "Disable"
@@ -23,7 +23,7 @@ function App() {
 
     else {
       setMyTheme({
-        class: "App h-[100vh]",
+        class: "App min-h-screen",
         color1: "blue",
         color2: "#e5e7eb",
         toggleText: "Enable"

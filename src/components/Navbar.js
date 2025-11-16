@@ -18,7 +18,7 @@ export default function Navbar(props) {
                 <div className="left my-auto">
                     <label className="relative inline-flex items-center cursor-pointer mt-1">
                         <input type="checkbox" className="sr-only peer" onChange={props.toggleMode} />
-                        <div className="w-12 h-6 bg-gray-400 rounded-full peer-checked:bg-blue-500 transition-colors duration-300"></div>
+                        <div className="w-12 h-6 bg-gray-400 rounded-full peer-checked:bg-green-600 transition-colors duration-300"></div>
                         <div className="absolute left-1 top-1 w-4 h-4 bg-white rounded-full shadow-md transition-transform duration-300 peer-checked:translate-x-6"></div>
                         <div className="ml-1" >{props.toggleText} Dark Mode</div>
                     </label>

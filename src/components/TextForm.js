@@ -36,11 +36,11 @@ export default function TextForm(props) {
     return (
         <div className="w-[100vw] px-10 max-[1280px]:space-y-20 mt-16 min-[1280px]:flex min-[1280px]:justify-between">
             <div className="left max-[1280px]:w-fit max-[1280px]:mx-auto">
-                <div className="form">
+                <div className="form w-fit mx-auto">
                     <h1 className="font-semibold text-3xl mb-2">{props.heading}</h1>
-                    <textarea id="myBox" style={{ backgroundColor: props.color2 }} placeholder='Enter text here' value={text} rows="10" className={`lg:w-[700px] w-[500px] rounded-md px-3 py-2 focus:outline-none`} onChange={handleOnChange}></textarea>
+                    <textarea id="myBox" style={{ backgroundColor: props.color2 }} placeholder='Enter text here' value={text} rows="10" className={`max-[600px]:w-[300px] lg:w-[700px] w-[500px] rounded-md px-3 py-2 focus:outline-none`} onChange={handleOnChange}></textarea>
                 </div>
-                <div className="buttons mt-4">
+                <div className="buttons mt-4 w-fit">
                     <button className={`bg-${props.color}-500 text-white px-4 py-2 rounded hover:bg-${props.color}-600 focus:outline-none focus:ring-2 focus:ring-${props.color}-400 transition mr-3`} onClick={toUpper}>Convert To Uppercase</button>
                     <button className={`bg-${props.color}-500 text-white px-4 py-2 rounded hover:bg-${props.color}-600 focus:outline-none focus:ring-2 focus:ring-${props.color}-400 transition mr-3`} onClick={toLower}>Convert To Lowercase</button>
                     <button className={`bg-${props.color}-500 text-white px-4 py-2 rounded hover:bg-${props.color}-600 focus:outline-none focus:ring-2 focus:ring-${props.color}-400 transition max-[600px]:mt-3`} onClick={clearText}>Clear Text</button>
